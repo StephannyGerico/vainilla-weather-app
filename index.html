@@ -17,28 +17,35 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-box">
-        <h1>Sky Lake</h1>
-        <ul>
-          <li>Tuesday 10:00 PM</li>
-          <li>Cloudy</li>
-        </ul>
-
-        <div class="row">
-          <div class="col-sm-6">
-            <img src="image.png" alt="clouds" />
-
-            19° C
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-6">
+      <div class="weather-box-wrapper">
+        <div class="weather-box">
+          <div class="overview">
+            <h1>Sky Lake</h1>
             <ul>
-              <li>Precipitation: 7%</li>
-              <li>Humidity: 90%</li>
-              <li>Wind: 18 km/h</li>
+              <li>Tuesday 10:00 PM</li>
+              <li>Cloudy</li>
             </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temp">
+                <img src="image.png" alt="clouds" class="float-left" />
+                <div class="float-left">
+                  <strong>19</strong
+                  ><span class="metric">°C|<a href="#">°F</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <ul>
+                <li>Precipitation: 7%</li>
+                <li>Humidity: 90%</li>
+                <li>Wind: 18 km/h</li>
+              </ul>
+            </div>
           </div>
         </div>
         <small>
