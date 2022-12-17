@@ -22,6 +22,38 @@
       <div class="weather-box-wrapper">
         <div class="weather-box">
           <div class="overview">
+            <form>
+              <div class="row">
+                <div class="col-6">
+                  <input
+                    class="search-input form-control"
+                    type="search"
+                    placeholder="Enter a city"
+                    autofocus="on"
+                    id="city-input"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="col-3">
+                  <input
+                    type="submit"
+                    class="btn btn-primary w-100"
+                    value="Search"
+                    id="search-city"
+                  />
+                </div>
+                <div class="col-3">
+                  <input
+                    type="button"
+                    id="current-button"
+                    class="btn btn-primary w-100"
+                    value="Current"
+                  />
+                </div>
+              </div>
+            </form>
+            <br />
+
             <h1 id="city"></h1>
             <ul>
               <li id="time"></li>
@@ -38,17 +70,17 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="row">
             <div class="col-6">
               <ul>
                 <li>Humidity: <span id="humidity"></span></li>
                 <li>Wind: <span id="speed"></span> km/h</li>
               </ul>
-            </div>
           </div>
+
         </div>
+
+      <br>
+      </div>
         <small>
           <a
             href="https://github.com/StephannyGerico/vainilla-wheather-app"
@@ -57,7 +89,6 @@
           >
           by Stephanny Mora
         </small>
-      </div>
     </div>
     <script src="src/app.js"></script>
   </body>

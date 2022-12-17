@@ -46,7 +46,6 @@ function displayTemperature(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.daily[0].condition.description);
-  getForecast(response.data.coordinates);
 }
 
 let apiKey = "52o39a0be8e7e44c8561e303aatfcbbf";
