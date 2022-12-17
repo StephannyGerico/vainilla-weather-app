@@ -35,10 +35,22 @@ function displayTemperature(response) {
   humidityElement.innerHTML = response.data.daily[0].temperature.humidity;
   speedElement.innerHTML = Math.round(response.data.daily[0].wind.speed);
   document.querySelector("#time").innerHTML = showDate(response.data.dt * 1000);
+
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.daily[0].condition.icon}.png`
+    );
+
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.daily[0].condition.description);
+  getForecast(response.data.coordinates);
 }
 
 let apiKey = "52o39a0be8e7e44c8561e303aatfcbbf";
-let city = "Barcelona";
+let city = "Buenos Aires";
 let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
