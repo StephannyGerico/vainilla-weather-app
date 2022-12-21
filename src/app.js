@@ -80,9 +80,9 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let speedElement = document.querySelector("#speed");
 
-  celsiusTemp = response.data.daily[0].temperature.day;
-
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  temperatureElement.innerHTML = Math.round(
+    response.data.daily[0].temperature.day
+  );
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.daily[0].condition.description;
   humidityElement.innerHTML = response.data.daily[0].temperature.humidity;
@@ -116,34 +116,7 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
-
-let celsiusTemp = null;
-
 let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 
 search("San Cristobal");
